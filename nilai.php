@@ -25,15 +25,18 @@
                 <tr style="text-align: center;">
                   <th>No</th>
                   <th>NIS</th>
-                  <th>Nama</th>
-                  <th>Kelas</th>
+                  <th>Nilai Ulangan</th>
+                  <th>Nilai UTS</th>
+                  <th>Nilai UAS</th>
+                  <th>Nilai Akhir</th>
+                  <th>Nilai Guru Matapelajaran</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
 
                 <?php
-                $no = 0;
+                $no = 1;
                 $sql = "SELECT * FROM nilai ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {
@@ -42,12 +45,15 @@
                   <tr style="text-align: center;">
                     <td><?= $no; ?></td>
                     <td><?= $m['nis'] ?></td>
-                    <td><?= $m['nama'] ?></td>
-                    <td><?= $m['kelas'] ?></td>
+                    <td><?= $m['nilai_ulangan'] ?></td>
+                    <td><?= $m['nilai_uts'] ?></td>
+                    <td><?= $m['nilai_uas'] ?></td>
+                    <td><?= $m['nilai_akhir'] ?></td>
+                    <td><?= $m['nilai_guru_mapel'] ?></td>
                     <td class="text-center">
-                      <a href="editsiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
+                      <a href="editnilai.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>
-                      <a href="deletesiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
+                      <a href="deletenilai.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
                         Hapus</a>
                     </td>
                   </tr>
