@@ -23,31 +23,31 @@
             <table class="table ">
               <thead>
                 <tr style="text-align: center;">
-                  <th>No</th>
-                  <th>NIS</th>
-                  <th>Nama</th>
-                  <th>Kelas</th>
+                  <th>ID</th>
+                  <th>NIP</th>
+                  <th>ID mapel</th>
+                  
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
 
                 <?php
-                $no = 0;
+                $id = 1;
                 $sql = "SELECT * FROM guru_mapel ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {
-                  $no++;
+                  $id++;
                 ?>
                   <tr style="text-align: center;">
-                    <td><?= $no; ?></td>
-                    <td><?= $m['nis'] ?></td>
-                    <td><?= $m['nama'] ?></td>
-                    <td><?= $m['kelas'] ?></td>
+                    <td><?= $id; ?></td>
+                    <td><?= $m['nip'] ?></td>
+                    <td><?= $m['id_mapel'] ?></td>
+                    
                     <td class="text-center">
-                      <a href="editsiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
+                      <a href="edit_guru_matpel.php?id=<?php print $m['nip'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>
-                      <a href="deletesiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
+                      <a href="delete_guru_matpel.php?id=<?php print $m['nip'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
                         Hapus</a>
                     </td>
                   </tr>
