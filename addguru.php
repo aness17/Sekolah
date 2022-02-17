@@ -27,7 +27,7 @@
                         <form class="row" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <label for="validationDefault01" class="form-label">NIP</label>
-                                <input type="text" class="form-control" name="nis" id="validationDefault01" placeholder="123xxxx" required>
+                                <input type="text" class="form-control" name="nip" id="validationDefault01" placeholder="123xxxx" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="validationDefault03" class="form-label">Nama</label>
