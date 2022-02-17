@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header('Location: index.php?status=sukses');
+header('Location: login.php?status=sukses');

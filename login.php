@@ -63,7 +63,7 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form method="POST" class=" row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
@@ -84,21 +84,17 @@
                     </div>
                   </form>
                   <?php
-                  include("koneksi.php");
-
                   //cek apakah tombol daftar sudah diklik atau belum?
                   if (isset($_POST['login'])) {
                     //ambil data dari formulir
                     $username = $_POST['username'];
                     $password = $_POST['password'];
 
-                    if ($username == "admin"  && $password == "rahasia") {
-                      echo "<script>alert('Berhasil Login');window.location.href='login.php';1</script>";
+                    if ($username == 'admin' && $password == 'rahasia') {
+                      echo "<script>alert('Berhasil Login');window.location.href='index.php';1</script>";
                     } else {
                       echo "<script>alert('Gagak Login');window.location.href='login.php';1</script>";
                     }
-                  } else {
-                    echo "masuk"; 
                   }
                   ?>
                 </div>
