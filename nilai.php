@@ -33,7 +33,7 @@
               <tbody class="list">
 
                 <?php
-                $no = 1;
+                $no = 0;
                 $sql = "SELECT * FROM nilai ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {

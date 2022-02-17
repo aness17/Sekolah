@@ -31,34 +31,32 @@
                             <thead>
                                 <tr style="text-align: center;">
                                     <th>No</th>
-                                    <th>ID</th>
+                                    <th>NIS</th>
                                     <th>Nama</th>
-                                    <th>Email</th>
-                                    <!-- <th>Password</th> -->
-                                    <th>No. Hp</th>
-                                    <th>Alamat</th>
-                                    <th>Catatan</th>
-                                    <th>Aksi</th>
+                                    <th>Kelas</th>
+                                    <th>Nama Mapel</th>
+                                    <th>Nama Guru</th>
+                                    <th>NA</th>
                                 </tr>
                             </thead>
                             <tbody class="list">
 
-                                <?php $no = 1;
-                                // $user = $this->db->query("SELECT * FROM user where fk_role = '2'");
-                                foreach ($outlet as $outlets) : ?>
+                                <!-- <?php $no = 1;
+                                        // $user = $this->db->query("SELECT * FROM user where fk_role = '2'");
+                                        foreach ($outlet as $outlets) : ?>
                                     <tr style="text-align: center;">
                                         <td><?= $no; ?></td>
                                         <td><?= $outlets['id_cs'] ?></td>
                                         <td><?= $outlets['nama_cs'] ?></td>
                                         <td><?= $outlets['email_cs'] ?></td>
                                         <!-- <td><?= $outlets['passwd_cs'] ?></td> -->
-                                        <td><?= $outlets['nohp_cs'] ?></td>
-                                        <td><?= $outlets['alamat_cs'] ?></td>
-                                        <td><?= $outlets['catatan'] ?></td>
+                                <td><?= $outlets['nohp_cs'] ?></td>
+                                <td><?= $outlets['alamat_cs'] ?></td>
+                                <td><?= $outlets['catatan'] ?></td>
 
-                                    </tr>
-                                <?php $no++;
-                                endforeach; ?>
+                                </tr>
+                            <?php $no++;
+                                        endforeach; ?> -->
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
