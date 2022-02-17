@@ -38,7 +38,6 @@
                   $no++;
                 ?>
                   <tr style="text-align: center;">
-                    <td><?= $no; ?></td>
                     <td><?= $m['id'] ?></td>
                     <td><?= $m['nama_mapel'] ?></td>
                     <td class="text-center">
