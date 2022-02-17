@@ -45,10 +45,12 @@
                                         <td><?= $m['nama'] ?></td>
                                         <td><?= $m['kelas'] ?></td>
                                         <td class="text-center">
-                                            <a href="editsiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
+                                            <a href="editsiswa.php?id=<?= $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">
+                                                edit
                                             </a>
-                                            <a href="deletesiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
-                                                Hapus</a>
+                                            <a href="deletesiswa.php?id=<?= $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
+                                                Hapus
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php
