@@ -17,16 +17,14 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Datatables</h5>
-            <a href="addmapel.php" type="button" class="btn btn-success text-white btn-sm">
+            <a href="addmatpel.php" type="button" class="btn btn-success text-white btn-sm">
               Tambah Mapel
             </a>
             <table class="table ">
               <thead>
                 <tr style="text-align: center;">
-                  <th>No</th>
-                  <th>NIS</th>
-                  <th>Nama</th>
-                  <th>Kelas</th>
+                  <th>ID</th>
+                  <th>Nama Mata Pelajaran</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -41,13 +39,12 @@
                 ?>
                   <tr style="text-align: center;">
                     <td><?= $no; ?></td>
-                    <td><?= $m['nis'] ?></td>
-                    <td><?= $m['nama'] ?></td>
-                    <td><?= $m['kelas'] ?></td>
+                    <td><?= $m['id'] ?></td>
+                    <td><?= $m['nama_mapel'] ?></td>
                     <td class="text-center">
-                      <a href="editsiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
+                      <a href="editmatpel.php?id=<?php print $m['id'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>
-                      <a href="deletesiswa.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
+                      <a href="deletematpel.php?id=<?php print $m['id'] ?>" type="button" class="btn btn-danger text-white btn-sm" style="color:red" onclick="return confirm('Are you sure to delete this row ?')">
                         Hapus</a>
                     </td>
                   </tr>
