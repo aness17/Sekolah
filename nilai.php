@@ -25,11 +25,12 @@
                 <tr style="text-align: center;">
                   <th>No</th>
                   <th>NIS</th>
+                  <th>Nama Siswa</th>
                   <th>Nilai Ulangan</th>
                   <th>Nilai UTS</th>
                   <th>Nilai UAS</th>
                   <th>Nilai Akhir</th>
-                  <th>ID Guru Matapelajaran</th>
+                  <th>Nama Guru</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -37,7 +38,14 @@
 
                 <?php
                 $no = 0;
-                $sql = "SELECT * FROM nilai ";
+                $sql = "SELECT * FROM nilai JOIN siswa
+ON nilai.nis = siswa.nis
+JOIN guru_mapel
+ON nilai.id_guru_mapel = guru_mapel.id
+JOIN guru
+ON guru_mapel.nip = guru.nip
+JOIN mapel
+ON guru_mapel.id_mapel = mapel.id_mapel ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {
                   $no++;
@@ -45,11 +53,12 @@
                   <tr style="text-align: center;">
                     <td><?= $no; ?></td>
                     <td><?= $m['nis'] ?></td>
+                    <td><?= $m['nama'] ?></td>
                     <td><?= $m['nilai_ulangan'] ?></td>
                     <td><?= $m['nilai_uts'] ?></td>
                     <td><?= $m['nilai_uas'] ?></td>
                     <td><?= $m['nilai_akhir'] ?></td>
-                    <td><?= $m['id_guru_mapel'] ?></td>
+                    <td><?= $m['nama_guru'] ?></td>
                     <td class="text-center">
                       <a href="editnilai.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>

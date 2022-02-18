@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="validationDefault03" class="form-label">ID GURU Matapelajaran</label>
-                                    <input type="text" class="form-control" name="id_guru_mapel" id="validationDefault03" value="<?php print $m['nilai_guru_mapel'] ?>">
+                                    <input type="text" class="form-control" name="id_guru_mapel" id="validationDefault03" value="<?php print $m['id_guru_mapel'] ?>">
                                 </div>
 
                                 <div class="form-group mb-3">

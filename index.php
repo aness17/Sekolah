@@ -1,7 +1,6 @@
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
-
-
+<?php include 'koneksi.php'; ?>
 
 <main id="main" class="main">
 
@@ -39,22 +38,24 @@
                             </thead>
                             <tbody class="list">
 
-                                <!-- <?php $no = 1;
-                                        // $user = $this->db->query("SELECT * FROM user where fk_role = '2'");
-                                        foreach ($outlet as $outlets) : ?>
+                                <?php
+                                $no = 0;
+                                $sql = "SELECT * FROM nilai_siswa ";
+                                $query = mysqli_query($db, $sql);
+                                while ($m = mysqli_fetch_array($query)) {
+                                    $no++;
+                                ?>
                                     <tr style="text-align: center;">
                                         <td><?= $no; ?></td>
-                                        <td><?= $outlets['id_cs'] ?></td>
-                                        <td><?= $outlets['nama_cs'] ?></td>
-                                        <td><?= $outlets['email_cs'] ?></td>
-                                        <!-- <td><?= $outlets['passwd_cs'] ?></td> -->
-                                <td><?= $outlets['nohp_cs'] ?></td>
-                                <td><?= $outlets['alamat_cs'] ?></td>
-                                <td><?= $outlets['catatan'] ?></td>
-
-                                </tr>
-                            <?php $no++;
-                                        endforeach; ?> -->
+                                        <td><?= $m['nis'] ?></td>
+                                        <td><?= $m['nama'] ?></td>
+                                        <td><?= $m['kelas'] ?></td>
+                                        <td><?= $m['nama_mapel'] ?></td>
+                                        <td><?= $m['nama_guru'] ?></td>
+                                        <td><?= $m['nilai_akhir'] ?></td>
+                                    </tr>
+                                <?php
+                                } ?>
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->

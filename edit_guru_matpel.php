@@ -31,12 +31,35 @@
                         ?>
                             <form class="row" method="post" enctype="multipart/form-data">
                                 <div class="form-group mb-3">
-                                    <label for="validationDefault01" class="form-label">NIP</label>
-                                    <input type="text" class="form-control" name="nip" id="validationDefault01" value="<?php print $m['nip'] ?>">
+                                    <select name="nip" id="nip" class="form-control">
+
+                                        <?php
+                                        $sql = "SELECT * FROM guru";
+
+                                        $query = mysqli_query($db, $sql);
+
+                                        while ($m = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                                        ?>
+
+                                            <option value="<?= $m['nip'] ?>"><?= $m['nip'] ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="validationDefault03" class="form-label">ID Matapelajaran </label>
-                                    <input type="text" class="form-control" name="id_mapel" id="validationDefault03" value="<?php print $m['id_mapel'] ?>">
+                                    <label for="validationDefault03" class="form-label">Matapelajaran </label>
+                                    <select name="id_mapel" id="id_mapel" class="form-control">
+
+                                        <?php
+                                        $sql = "SELECT * FROM mapel";
+
+                                        $query = mysqli_query($db, $sql);
+
+                                        while ($m = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                                        ?>
+
+                                            <option value="<?= $m['id_mapel'] ?>"><?= $m['nama_mapel'] ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
 
 

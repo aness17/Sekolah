@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="validationDefault03" class="form-label">Nama </label>
-                                    <input type="text" class="form-control" name="nama" id="validationDefault03" value="<?php print $m['nama'] ?>">
+                                    <input type="text" class="form-control" name="nama_guru" id="validationDefault03" value="<?php print $m['nama'] ?>">
                                 </div>
 
 
@@ -50,14 +50,14 @@
 
                             if (isset($_POST['save'])) {
                                 $id = $_POST['nip'];
-                                $nama = $_POST['nama'];
+                                $nama = $_POST['nama_guru'];
 
                                 if (!empty($nama) && !empty($kelas)) {
-                                    $sql = "UPDATE guru SET nama='$nama' WHERE nip='$id'";
+                                    $sql = "UPDATE guru SET nama_guru='$nama' WHERE nip='$id'";
                                     $query = mysqli_query($db, $sql);
                                     echo "<script>alert('Data Berhasil Diubah');window.location.href='guru.php';1</script>";
                                 } else {
-                                    $sql = "UPDATE guru SET nama='$nama' WHERE nip='$id'";
+                                    $sql = "UPDATE guru SET nama_guru='$nama' WHERE nip='$id'";
                                     echo "<script>alert('Data Gagal Diubah');window.location.href='guru.php';1</script>";
                                 }
                             }

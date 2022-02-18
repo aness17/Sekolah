@@ -25,8 +25,8 @@
                 <tr style="text-align: center;">
                   <th>ID</th>
                   <th>NIP</th>
-                  <th>ID mapel</th>
-                  
+                  <th>Nama Guru</th>
+                  <th>Mata Pelajaran</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -34,7 +34,10 @@
 
                 <?php
                 $id = 0;
-                $sql = "SELECT * FROM guru_mapel ";
+                $sql = "SELECT * FROM guru_mapel JOIN mapel 
+                        ON guru_mapel.id_mapel = mapel.id_mapel
+                        JOIN guru
+                        ON guru_mapel.nip = guru.nip";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {
                   $id++;
@@ -42,8 +45,10 @@
                   <tr style="text-align: center;">
                     <td><?= $id; ?></td>
                     <td><?= $m['nip'] ?></td>
-                    <td><?= $m['id_mapel'] ?></td>
-                    
+                    <td><?= $m['nama_guru'] ?></td>
+
+                    <td><?= $m['nama_mapel'] ?></td>
+
                     <td class="text-center">
                       <a href="edit_guru_matpel.php?id=<?php print $m['nip'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>

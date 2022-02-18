@@ -41,7 +41,7 @@
                                     <tr style="text-align: center;">
                                         <td><?= $no; ?></td>
                                         <td><?= $m['nip'] ?></td>
-                                        <td><?= $m['nama'] ?></td>
+                                        <td><?= $m['nama_guru'] ?></td>
                                         <td class="text-center">
                                             <a href="editguru.php?id=<?= $m['nip'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">
                                                 edit

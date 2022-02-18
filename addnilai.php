@@ -66,7 +66,7 @@
                                 <select name="id_guru_mapel" id="id_guru_mapel" class="form-control">
 
                                     <?php
-                                    $sql = "SELECT guru_mapel.id as id, guru.nama as nama FROM guru_mapel JOIN guru ON guru_mapel.nip= guru.nip";
+                                    $sql = "SELECT guru_mapel.id as id, guru.nama_guru as nama FROM guru_mapel JOIN guru ON guru_mapel.nip= guru.nip";
 
                                     $query = mysqli_query($db, $sql);
 
@@ -91,7 +91,7 @@
                                             Values('$_POST[nis]','$_POST[nilai_ulangan]','$_POST[nilai_uts]',
                                             '$_POST[nilai_uas]','$nilai_akhir','$_POST[id_guru_mapel]')";
                             $db->query($sql);
-                            // echo $nilai_akhir;
+                            // echo $sql;
                             // die;
                             echo "<script>alert('Nilai Berhasil Ditambahkan');window.location.href='nilai.php';1</script>";
                         }
