@@ -42,10 +42,10 @@
                         include 'koneksi.php';
 
                         if (isset($_POST['save'])) {
-                            $db->query("INSERT INTO mapel(id,nama_mapel)
-                                            Values('$_POST[id]','$_POST[nama_mapel]')");
+                            $db->query("INSERT INTO mapel(id_mapel,nama_mapel)
+                                            Values('$_POST[id_mapel]','$_POST[nama_mapel]')");
 
-                            echo "<script>alert('Siswa Berhasil Ditambahkan');window.location.href='matpel.php';1</script>";
+                            echo "<script>alert('Mata Pelajaran Berhasil Ditambahkan');window.location.href='matpel.php';1</script>";
                         }
                         ?>
                         <!-- End Browser Default Validation -->
@@ -54,4 +54,7 @@
                 </div>
 
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>

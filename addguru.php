@@ -33,7 +33,7 @@
                                 <label for="validationDefault03" class="form-label">Nama</label>
                                 <input type="text" class="form-control" name="nama" id="validationDefault03" placeholder="Nana" required>
                             </div>
-                            
+
 
                             <div class="form-group mb-3">
                                 <button class="btn btn-primary" name="save" type="submit">Tambah Data</button>
@@ -47,7 +47,7 @@
                             $db->query("INSERT INTO guru(nip,nama)
                                             Values('$_POST[nip]','$_POST[nama]')");
 
-                            echo "<script>alert('Siswa Berhasil Ditambahkan');window.location.href='guru.php';1</script>";
+                            echo "<script>alert('Guru Berhasil Ditambahkan');window.location.href='guru.php';1</script>";
                         }
                         ?>
                         <!-- End Browser Default Validation -->
@@ -56,4 +56,7 @@
                 </div>
 
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>

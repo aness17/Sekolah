@@ -52,8 +52,8 @@
                                     <input type="text" class="form-control" name="nilai_akhir" id="validationDefault03" value="<?php print $m['nilai_akhir'] ?>">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="validationDefault03" class="form-label">Nilai GURU Matapelajaran</label>
-                                    <input type="text" class="form-control" name="nilai_guru_mapel" id="validationDefault03" value="<?php print $m['nilai_guru_mapel'] ?>">
+                                    <label for="validationDefault03" class="form-label">ID GURU Matapelajaran</label>
+                                    <input type="text" class="form-control" name="id_guru_mapel" id="validationDefault03" value="<?php print $m['nilai_guru_mapel'] ?>">
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -69,14 +69,14 @@
                                 $nilai_uts = $_POST['nilai_uts'];
                                 $nilai_uas = $_POST['nilai_uas'];
                                 $nilai_akhir = $_POST['nilai_akhir'];
-                                $nilai_guru_mapel = $_POST['nilai_guru_mapel'];
+                                $id_guru_mapel = $_POST['id_guru_mapel'];
 
                                 if (!empty($id) && !empty($nilai_ulangan) && !empty($nilai_uts) && !empty($nilai_uas) && !empty($nilai_akhir) && !empty($nilai_guru_mapel)) {
-                                    $sql = "UPDATE nilai SET nilai_ulangan='$nilai_ulangan', nilai_uts='$nilai_uts',nilai_uas='$nilai_uas',nilai_akhir='$nilai_akhir', nilai_guru_mapel='$nilai_guru_mapel' WHERE nis='$id'";
+                                    $sql = "UPDATE nilai SET nilai_ulangan='$nilai_ulangan', nilai_uts='$nilai_uts',nilai_uas='$nilai_uas',nilai_akhir='$nilai_akhir', id_guru_mapel='$id_guru_mapel' WHERE nis='$id'";
                                     $query = mysqli_query($db, $sql);
                                     echo "<script>alert('Data Berhasil Diubah');window.location.href='nilai.php';1</script>";
                                 } else {
-                                    $sql = "UPDATE nilai SET nilai_ulangan='$nilai_ulangan', nilai_uts='$nilai_uts',nilai_uas='$nilai_uas',nilai_akhir='$nilai_akhir', nilai_guru_mapel='$nilai_guru_mapel' WHERE nis='$id'";
+                                    $sql = "UPDATE nilai SET nilai_ulangan='$nilai_ulangan', nilai_uts='$nilai_uts',nilai_uas='$nilai_uas',nilai_akhir='$nilai_akhir', id_guru_mapel='$id_guru_mapel' WHERE nis='$id'";
                                     echo "<script>alert('Data Gagal Diubah');window.location.href='nilai.php';1</script>";
                                 }
                             }
@@ -85,6 +85,8 @@
 
                     </div>
                 </div>
-
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>

@@ -38,7 +38,7 @@
                                     <label for="validationDefault03" class="form-label">ID Matapelajaran </label>
                                     <input type="text" class="form-control" name="id_mapel" id="validationDefault03" value="<?php print $m['id_mapel'] ?>">
                                 </div>
-                                
+
 
                                 <div class="form-group mb-3">
                                     <button class="btn btn-primary" name="save" type="submit">Ubah Data</button>
@@ -51,7 +51,7 @@
                                 $id = $_POST['nip'];
                                 $id_mapel = $_POST['id_mapel'];
 
-                                if (!empty($id_mapel) ) {
+                                if (!empty($id_mapel)) {
                                     $sql = "UPDATE guru_mapel SET id_mapel='$id_mapel' WHERE nip='$id'";
                                     $query = mysqli_query($db, $sql);
                                     echo "<script>alert('Data Berhasil Diubah');window.location.href='guru_matpel.php';1</script>";
@@ -67,4 +67,7 @@
                 </div>
 
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>

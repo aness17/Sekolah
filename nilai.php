@@ -29,14 +29,14 @@
                   <th>Nilai UTS</th>
                   <th>Nilai UAS</th>
                   <th>Nilai Akhir</th>
-                  <th>Nilai Guru Matapelajaran</th>
+                  <th>ID Guru Matapelajaran</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody class="list">
 
                 <?php
-                $no = 1;
+                $no = 0;
                 $sql = "SELECT * FROM nilai ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {
@@ -49,7 +49,7 @@
                     <td><?= $m['nilai_uts'] ?></td>
                     <td><?= $m['nilai_uas'] ?></td>
                     <td><?= $m['nilai_akhir'] ?></td>
-                    <td><?= $m['nilai_guru_mapel'] ?></td>
+                    <td><?= $m['id_guru_mapel'] ?></td>
                     <td class="text-center">
                       <a href="editnilai.php?id=<?php print $m['nis'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit
                       </a>

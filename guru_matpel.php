@@ -33,7 +33,7 @@
               <tbody class="list">
 
                 <?php
-                $id = 1;
+                $id = 0;
                 $sql = "SELECT * FROM guru_mapel ";
                 $query = mysqli_query($db, $sql);
                 while ($m = mysqli_fetch_array($query)) {

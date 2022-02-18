@@ -39,7 +39,7 @@
                                     <label for="validationDefault03" class="form-label">Nama </label>
                                     <input type="text" class="form-control" name="nama" id="validationDefault03" value="<?php print $m['nama'] ?>">
                                 </div>
-                                
+
 
                                 <div class="form-group mb-3">
                                     <button class="btn btn-primary" name="save" type="submit">Ubah Data</button>
@@ -68,4 +68,7 @@
                 </div>
 
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>

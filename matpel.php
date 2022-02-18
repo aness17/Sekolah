@@ -38,7 +38,7 @@
                   $no++;
                 ?>
                   <tr style="text-align: center;">
-                    <td><?= $m['id'] ?></td>
+                    <td><?= $m['id_mapel'] ?></td>
                     <td><?= $m['nama_mapel'] ?></td>
                     <td class="text-center">
                       <a href="editmatpel.php?id=<?php print $m['id'] ?>" type="button" class="btn btn-success text-white btn-sm" style="color:limegreen">edit

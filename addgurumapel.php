@@ -23,30 +23,55 @@
                     <div class="card-body">
                         <h5 class="card-title">Tambah Guru Matapelajaran</h5>
 
+                        <?php
+                        include 'koneksi.php'; ?>
+
                         <!-- Browser Default Validation -->
                         <form class="row" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <label for="validationDefault01" class="form-label">NIP</label>
-                                <input type="text" class="form-control" name="nip" id="validationDefault01" placeholder="123xxxx" required>
+                                <select name="nip" id="nip" class="form-control">
+
+                                    <?php
+                                    $sql = "SELECT * FROM guru";
+
+                                    $query = mysqli_query($db, $sql);
+
+                                    while ($m = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                                    ?>
+
+                                        <option value="<?= $m['nip'] ?>"><?= $m['nip'] ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="validationDefault03" class="form-label">ID Matapelajaran</label>
-                                <input type="text" class="form-control" name="id_mapel" id="validationDefault03" placeholder="nama guru matapelajaran" required>
+                                <select name="id_mapel" id="id_mapel" class="form-control">
+
+                                    <?php
+                                    $sql = "SELECT * FROM mapel";
+
+                                    $query = mysqli_query($db, $sql);
+
+                                    while ($m = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                                    ?>
+
+                                        <option value="<?= $m['id_mapel'] ?>"><?= $m['nama_mapel'] ?></option>
+                                    <?php } ?>
+                                </select>
+
                             </div>
-                            
+
                             <div class="form-group mb-3">
                                 <button class="btn btn-primary" name="save" type="submit">Tambah Data</button>
                             </div>
                         </form>
                         <?php
-
-                        include 'koneksi.php';
-
                         if (isset($_POST['save'])) {
                             $db->query("INSERT INTO guru_mapel(nip,id_mapel)
                                             Values('$_POST[nip]','$_POST[id_mapel]')");
 
-                            echo "<script>alert('Siswa Berhasil Ditambahkan');window.location.href='guru_matpel.php';1</script>";
+                            echo "<script>alert('Data Berhasil Ditambahkan');window.location.href='guru_matpel.php';1</script>";
                         }
                         ?>
                         <!-- End Browser Default Validation -->
@@ -55,4 +80,7 @@
                 </div>
 
             </div>
-            <?php include 'footer.php'; ?>
+        </div>
+    </section>
+</main>
+<?php include 'footer.php'; ?>
